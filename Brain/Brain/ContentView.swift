@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var power_sleep_status = false
     var body: some View {
         NavigationView {
                     List {
@@ -34,10 +35,10 @@ struct ContentView: View {
                                     Image(systemName: "powersleep").font(.callout)
                                         .foregroundColor(.white)
                                 }.frame(width: 28, height: 28).background(Color.purple).cornerRadius(6)
-                                Text("Sleep Mode")
+                                //Text("Sleep Mode")
                                 
                                 Spacer()
-                                Toggle("", isOn: .constant(false))
+                                Toggle("Sleep Mode", isOn: $power_sleep_status)
                             }
                             
                             HStack {
@@ -45,10 +46,10 @@ struct ContentView: View {
                                     Image(systemName: "target").font(.callout)
                                         .foregroundColor(.white)
                                 }.frame(width: 28, height: 28).background(Color.green).cornerRadius(6)
-                                Text("Focus Mode")
+                                //Text("Focus Mode")
                                 
                                 Spacer()
-                                Toggle("", isOn: .constant(true))
+                                Toggle("Focus Mode", isOn: .constant(true))
                             }
                             NavigationLink(destination: Text("Detail View")) {
                                 HStack {
